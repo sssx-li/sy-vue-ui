@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "packages/theme-chalk/*",
+    "packages/sy-vue-ui/package.json",
+    "internal/**/*",
+    "internal/**/*.json"
+  ],
+  "exclude": ["**/dist"]
+}

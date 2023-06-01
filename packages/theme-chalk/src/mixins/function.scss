@@ -1,0 +1,51 @@
+@use "config";
+
+// BEM support Func
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+// 判断父级选择器是否包含 $modifier-separator 即 --
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, config.$modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+// 判断当前选择器是否包含 $state-prefix 即 "is-"
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, "." + config.$state-prefix) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+// 判断当前选择器是否包含 ':'
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, ":") {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+// 判断是否命中规则
+@function hitAllSpecialNestRule($selector) {
+  @return containsModifier($selector) or containWhenFlag($selector) or
+    containPseudoClass($selector);
+}
+// bem('block', 'element', 'modifier') => 'el-block__element--modifier'
+@function bem($block, $element: "", $modifier: "") {
+  $name: config.$namespace + config.$common-separator + $block;
+  @if $element != "" {
+    $name: $name + config.$element-separator + $element;
+  }
+  @if $modifier != "" {
+    $name: $name + config.$modifier-separator + $modifier;
+  }
+  @return $name;
+}

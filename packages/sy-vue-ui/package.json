@@ -1,0 +1,47 @@
+{
+  "name": "sy-vue-ui",
+  "version": "1.0.11",
+  "description": "A Component Library for Vue 3",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./es/index.mjs"
+    },
+    "./es": "./es/index.mjs",
+    "./lib": "./lib/index.js",
+    "./es/*.mjs": "./es/*.mjs",
+    "./es/*": "./es/*.mjs",
+    "./lib/*.js": "./lib/*.js",
+    "./lib/*": "./lib/*.js",
+    "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "style": "theme-chalk/index.css",
+  "sideEffects": [
+    "style/**/*.css",
+    "style/src/**/*.scss",
+    "es/*/style/*",
+    "lib/*/style/*"
+  ],
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.2.4",
+    "vue": "^3.3.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ]
+}

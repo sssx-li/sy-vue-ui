@@ -1,0 +1,64 @@
+@use "config" as *;
+@use "function" as *;
+
+@forward "config";
+@forward "function";
+
+// BEM
+// b('button') ===> .sy-button
+@mixin b($block) {
+  $B: $namespace + "-" + $block !global;
+  .#{$B} {
+    @content;
+  }
+}
+// $B: sy-button
+// e(content) ===> & .sy-button__content || .sy-button__content
+// e(content text) ===> & .sy-button__content, & .sy-button__text  || .sy-button__content, .sy-button__text
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector +
+      "." +
+      $B +
+      $element-separator +
+      $unit +
+      ","};
+  }
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+// m(content) ===> &--content
+// m(content text) ===> &--content, &--text
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector +
+      $selector +
+      $modifier-separator +
+      $unit +
+      ","};
+  }
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
