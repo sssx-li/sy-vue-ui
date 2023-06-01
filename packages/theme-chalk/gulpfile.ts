@@ -7,7 +7,7 @@ import gulpSass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import cleanCSS from "gulp-clean-css";
 import rename from "gulp-rename";
-import { syRoot } from "@sy-element-ui/build-utils";
+import { syRoot } from "@sy-vue-ui/build-utils";
 
 import dartSass from "sass";
 
@@ -40,12 +40,12 @@ function buildThemeChalk() {
     .pipe(dest(distFolder));
 }
 
-// 打包样式拷贝 packages/theme-chalk/dist ---> dist/sy-element-ui/theme-chalk
+// 打包样式拷贝 packages/theme-chalk/dist ---> dist/sy-vue-ui/theme-chalk
 export function copyThemeChalkBundle() {
   return src(`${distFolder}/**`).pipe(dest(distBundle));
 }
 
-// 样式资源拷贝 dist/sy-element-ui/theme-chalk/src
+// 样式资源拷贝 dist/sy-vue-ui/theme-chalk/src
 export function copyThemeChalkSource() {
   return src(path.resolve(__dirname, "src/**")).pipe(
     dest(path.resolve(distBundle, "src"))

@@ -1,4 +1,4 @@
-import { withInstall } from "@sy-element-ui/utils";
+import { withInstall } from "@sy-vue-ui/utils";
 
 import Button from "./src/button.vue";
 

@@ -15,7 +15,7 @@
     "removeComments": false, // 删除所有注释，除了以 /!*开头的版权信息。
     "rootDir": ".", // 仅用来控制输出的目录结构
     "paths": {
-      "@sy-element-ui/*": ["packages/*"]
+      "@sy-vue-ui/*": ["packages/*"]
     } // 模块名到基于 baseUrl的路径映射的列表
   }
 }

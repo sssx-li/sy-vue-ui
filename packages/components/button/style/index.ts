@@ -1,1 +1,1 @@
-import "@sy-element-ui/theme-chalk/src/button.scss";
+import "@sy-vue-ui/theme-chalk/src/button.scss";
