@@ -2,8 +2,9 @@
   "extends": "./tsconfig.web.json",
   "compilerOptions": {
     "allowJs": true,
+    "moduleResolution": "bundler",
     "types": ["unplugin-vue-macros/macros-global"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": ["packages", "typing/*.d.ts", "play/**/*", "play/**/*.ts"]
+  "include": ["packages", "typing/*.d.ts", "play/**/*", "play/main.ts"]
 }

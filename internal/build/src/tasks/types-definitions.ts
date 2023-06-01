@@ -6,6 +6,7 @@ import * as vueCompiler from "vue/compiler-sfc";
 import glob from "fast-glob";
 import chalk from "chalk";
 import { Project } from "ts-morph";
+
 import {
   buildOutput,
   excludeFiles,
@@ -14,6 +15,7 @@ import {
   syRoot,
 } from "@sy-vue-ui/build-utils";
 import { pathRewriter } from "../utils";
+
 import type { CompilerOptions, SourceFile } from "ts-morph";
 
 const TSCONFIG_PATH = path.resolve(projRoot, "tsconfig.web.json");
@@ -79,7 +81,7 @@ async function addSourceFiles(project: Project) {
   project.addSourceFileAtPath(path.resolve(projRoot, "typing/env.d.ts"));
   const globSourceFile = "**/*.{js?(x),ts?(x),vue}";
   const filePaths = excludeFiles(
-    await glob([globSourceFile, "!sy-vue-ui/**/*", "!components/vite.config.ts"], {
+    await glob([globSourceFile, "!sy-vue-ui/**/*"], {
       cwd: pkgRoot, // 根目录(当前工作目录)
       absolute: true, // 返回条目的绝对路径
       onlyFiles: true, // 仅返回文件
