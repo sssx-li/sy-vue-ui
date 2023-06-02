@@ -6,6 +6,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import esbuild from "rollup-plugin-esbuild";
 import glob from "fast-glob";
+
 import { syRoot, excludeFiles, pkgRoot } from "@sy-vue-ui/build-utils";
 import { generateExternal, writeBundles } from "../utils";
 import { SyVueUIAlias } from "../plugins/sy-vue-ui-alias";

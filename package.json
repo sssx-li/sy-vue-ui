@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm -C play dev",
+    "build": "pnpm run -C internal/build start",
+    "build:theme": "pnpm run -C packages/theme-chalk build",
+    "clean": "pnpm run clean:dist && pnpm run clean:bundler && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
+    "clean:bundler": "rimraf packages/sy-vue-ui/es packages/sy-vue-ui/lib packages/sy-vue-ui/theme-chalk packages/sy-vue-ui/global.d.ts",
     "typecheck": "run-p typecheck:web typecheck:play typecheck:node",
     "typecheck:web": "vue-tsc -p tsconfig.web.json --composite false --noEmit",
     "typecheck:node": "tsc -p tsconfig.node.json --noEmit",
@@ -17,10 +22,10 @@
     "@sy-vue-ui/components": "workspace:^",
     "@sy-vue-ui/hooks": "workspace:^",
     "@sy-vue-ui/theme-chalk": "workspace:^",
-    "@sy-vue-ui/utils": "workspace:^",
-    "vue": "^3.3.4"
+    "@sy-vue-ui/utils": "workspace:^"
   },
   "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.2",
     "@pnpm/types": "^9.1.0",
     "@sy-vue-ui/build": "workspace:^",
     "@sy-vue-ui/build-constants": "workspace:^",
@@ -30,17 +35,19 @@
     "@types/node": "^20.2.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
-    "@vue/runtime-core": "^3.3.4",
     "fs-extra": "^11.1.1",
     "gulp": "^4.0.2",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
     "rollup-plugin-esbuild": "^5.0.0",
     "sass": "^1.62.1",
+    "sy-vue-ui": "workspace:^",
     "ts-morph": "^18.0.0",
-    "typescript": "^5.0.4",
+    "typescript": "^5.1.3",
     "unbuild": "^1.2.1",
     "unplugin-vue-macros": "^2.2.1",
     "vite": "^4.3.9",
+    "vue": "^3.2.47",
     "vue-tsc": "^1.6.5"
   }
 }

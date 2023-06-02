@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container">demo</div>
+  <SyButton>按钮1</SyButton>
 </template>
 
 <script setup lang="ts"></script>

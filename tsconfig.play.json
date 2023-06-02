@@ -6,5 +6,6 @@
     "types": ["unplugin-vue-macros/macros-global"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
-  "include": ["packages", "typing/*.d.ts", "play/**/*", "play/main.ts"]
+  "include": ["packages", "typing/*.d.ts", "play/**/*", "play/main.ts"],
+  "exclude": ["packages/sy-vue-ui/global.d.ts"]
 }

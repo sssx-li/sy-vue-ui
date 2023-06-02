@@ -6,6 +6,7 @@ import type { TaskFunction } from "gulp";
 
 import {
   buildOutput,
+  projRoot,
   syOutput,
   syPackage,
   syRoot,
@@ -17,14 +18,10 @@ import type { Module } from "./src";
 export const copyFiles = () =>
   Promise.all([
     copyFile(syPackage, path.join(syOutput, "package.json")),
-    // copyFile(
-    //   path.resolve(projRoot, "README.md"),
-    //   path.resolve(syOutput, "README.md")
-    // ),
-    // copyFile(
-    //   path.resolve(projRoot, "global.d.ts"),
-    //   path.resolve(syOutput, "global.d.ts")
-    // ),
+    copyFile(
+      path.resolve(projRoot, "global.d.ts"),
+      path.resolve(syOutput, "global.d.ts")
+    ),
   ]);
 
 export const copyTypesDefinitions: TaskFunction = (done) => {
@@ -42,7 +39,7 @@ export const copyFullFiles = () => Promise.all([copy(syOutput, syRoot)]);
 const buildTasks = series(
   withTaskName("clean", () => run("pnpm run clean")),
   withTaskName("createOutput", () => mkdir(syOutput, { recursive: true })),
-  parallel(runTask("generateTypesDefinitions")),
+  parallel(runTask("buildModules"), runTask("generateTypesDefinitions")),
   parallel(copyTypesDefinitions, copyFiles),
   copyFullFiles,
   withTaskName("build:theme", () => run("pnpm run build:theme"))
