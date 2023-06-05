@@ -1,1 +1,1 @@
-export * from "./pkg";
+export * from './pkg';

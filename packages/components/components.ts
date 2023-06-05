@@ -1,5 +1,5 @@
-import type { Plugin } from "vue";
+import type { Plugin } from 'vue';
 
-import { SyButton } from "./src/button";
+import { SyButton } from './src/button';
 
 export default [SyButton] as Plugin[];

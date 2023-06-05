@@ -1,0 +1,4 @@
+**.d.ts
+/packages/sy-vue-ui
+dist
+node_modules

@@ -1,4 +1,4 @@
-import type { Plugin, App } from "vue";
+import type { Plugin, App } from 'vue';
 
 export type SFCWithInstall<T> = T & Plugin;
 
@@ -20,6 +20,6 @@ export const makeInstaller = (components: Plugin[] = []) => {
       components.forEach((c) => {
         return app.use(c);
       });
-    },
+    }
   };
 };

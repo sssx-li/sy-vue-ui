@@ -1,5 +1,5 @@
-const defaultNamespace = "sy";
-const statePrefix = "is-";
+const defaultNamespace = 'sy';
+const statePrefix = 'is-';
 
 const _bem = (
   namespace: string,
@@ -22,32 +22,32 @@ const _bem = (
 };
 
 export const useNamespace = (block: string) => {
-  const b = (blockSuffix = "") =>
-    _bem(defaultNamespace, block, blockSuffix, "", "");
+  const b = (blockSuffix = '') =>
+    _bem(defaultNamespace, block, blockSuffix, '', '');
   const e = (element?: string) =>
-    element ? _bem(defaultNamespace, block, "", element, "") : "";
+    element ? _bem(defaultNamespace, block, '', element, '') : '';
   const m = (modifier?: string) =>
-    modifier ? _bem(defaultNamespace, block, "", "", modifier) : "";
+    modifier ? _bem(defaultNamespace, block, '', '', modifier) : '';
   const be = (blockSuffix?: string, element?: string) =>
     blockSuffix && element
-      ? _bem(defaultNamespace, block, blockSuffix, element, "")
-      : "";
+      ? _bem(defaultNamespace, block, blockSuffix, element, '')
+      : '';
   const em = (element?: string, modifier?: string) =>
     element && modifier
-      ? _bem(defaultNamespace, block, "", element, modifier)
-      : "";
+      ? _bem(defaultNamespace, block, '', element, modifier)
+      : '';
   const bm = (blockSuffix?: string, modifier?: string) =>
     blockSuffix && modifier
-      ? _bem(defaultNamespace, block, blockSuffix, "", modifier)
-      : "";
+      ? _bem(defaultNamespace, block, blockSuffix, '', modifier)
+      : '';
   const bem = (blockSuffix?: string, element?: string, modifier?: string) =>
     blockSuffix && element && modifier
       ? _bem(defaultNamespace, block, blockSuffix, element, modifier)
-      : "";
+      : '';
   const is = (name: string, state: boolean) => {
-    return name && state ? `${statePrefix}${name}` : "";
+    return name && state ? `${statePrefix}${name}` : '';
   };
-  
+
   return {
     b,
     e,
@@ -56,6 +56,6 @@ export const useNamespace = (block: string) => {
     bm,
     em,
     bem,
-    is,
+    is
   };
 };

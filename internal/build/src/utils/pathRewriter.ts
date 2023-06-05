@@ -1,6 +1,6 @@
-import { PKG_NAME, PKG_PREFIX } from "@sy-vue-ui/build-constants";
-import { buildConfig } from "../build-info";
-import type { Module } from "../build-info";
+import { PKG_NAME, PKG_PREFIX } from '@sy-vue-ui/build-constants';
+import { buildConfig } from '../build-info';
+import type { Module } from '../build-info';
 
 export const pathRewriter = (module: Module) => {
   const config = buildConfig[module];

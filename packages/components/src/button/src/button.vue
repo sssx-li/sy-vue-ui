@@ -3,14 +3,14 @@
 </template>
 
 <script setup lang="ts">
-import { useNamespace } from "@sy-vue-ui/hooks";
-import { buttonProps } from "./button";
+import { useNamespace } from '@sy-vue-ui/hooks';
+import { buttonProps } from './button';
 defineOptions({
-  name: "SyButton",
+  name: 'SyButton'
 });
 const props = defineProps(buttonProps);
 
-const ns = useNamespace("button");
+const ns = useNamespace('button');
 </script>
 
 <style lang="scss" scoped></style>

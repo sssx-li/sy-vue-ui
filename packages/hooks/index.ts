@@ -1,1 +1,1 @@
-export * from "./useNamespace";
+export * from './useNamespace';

@@ -1,15 +1,15 @@
-import { PKG_NAME } from "@sy-vue-ui/build-constants";
-import { syOutput } from "@sy-vue-ui/build-utils";
-import path from "path";
+import { PKG_NAME } from '@sy-vue-ui/build-constants';
+import { syOutput } from '@sy-vue-ui/build-utils';
+import path from 'path';
 
-import type { ModuleFormat } from "rollup";
+import type { ModuleFormat } from 'rollup';
 
-export const modules = ["esm", "cjs"] as const;
+export const modules = ['esm', 'cjs'] as const;
 export type Module = (typeof modules)[number];
 export interface BuildInfo {
-  module: "ESNext" | "CommonJS";
+  module: 'ESNext' | 'CommonJS';
   format: ModuleFormat;
-  ext: "mjs" | "cjs" | "js";
+  ext: 'mjs' | 'cjs' | 'js';
   output: {
     /** e.g: `es` */
     name: string;
@@ -25,29 +25,29 @@ export interface BuildInfo {
 
 export const buildConfig: Record<Module, BuildInfo> = {
   esm: {
-    module: "ESNext",
-    format: "esm",
-    ext: "mjs",
+    module: 'ESNext',
+    format: 'esm',
+    ext: 'mjs',
     output: {
-      name: "es",
-      path: path.resolve(syOutput, "es"),
+      name: 'es',
+      path: path.resolve(syOutput, 'es')
     },
     bundle: {
-      path: `${PKG_NAME}/es`,
-    },
+      path: `${PKG_NAME}/es`
+    }
   },
   cjs: {
-    module: "CommonJS",
-    format: "cjs",
-    ext: "js",
+    module: 'CommonJS',
+    format: 'cjs',
+    ext: 'js',
     output: {
-      name: "lib",
-      path: path.resolve(syOutput, "lib"),
+      name: 'lib',
+      path: path.resolve(syOutput, 'lib')
     },
     bundle: {
-      path: `${PKG_NAME}/lib`,
-    },
-  },
+      path: `${PKG_NAME}/lib`
+    }
+  }
 };
 export const buildConfigEntries = Object.entries(
   buildConfig
@@ -56,4 +56,4 @@ export const buildConfigEntries = Object.entries(
 export type BuildConfig = typeof buildConfig;
 export type BuildConfigEntries = [Module, BuildInfo][];
 
-export const target = "es2018";
+export const target = 'es2018';

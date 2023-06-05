@@ -1,6 +1,6 @@
-import { syPackage, getPackageDependencies } from "@sy-vue-ui/build-utils";
+import { syPackage, getPackageDependencies } from '@sy-vue-ui/build-utils';
 
-import type { OutputOptions, RollupBuild } from "rollup";
+import type { OutputOptions, RollupBuild } from 'rollup';
 
 export const generateExternal = async (options: { full: boolean }) => {
   const { dependencies, peerDependencies } = getPackageDependencies(syPackage);
@@ -8,7 +8,7 @@ export const generateExternal = async (options: { full: boolean }) => {
   return (id: string) => {
     const packages: string[] = [...peerDependencies];
     if (!options.full) {
-      packages.push("@vue", ...dependencies);
+      packages.push('@vue', ...dependencies);
     }
 
     return [...new Set(packages)].some(
@@ -26,5 +26,5 @@ export function formatBundleFilename(
   minify: boolean,
   ext: string
 ) {
-  return `${name}${minify ? ".min" : ""}.${ext}`;
+  return `${name}${minify ? '.min' : ''}.${ext}`;
 }
