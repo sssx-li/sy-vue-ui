@@ -32,6 +32,9 @@
   "peerDependencies": {
     "vue": "^3.2.0"
   },
+  "scripts": {
+    "release": "release-it"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -43,5 +46,9 @@
     "> 1%",
     "not ie 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sssx-li/sy-vue-ui.git"
+  }
 }
