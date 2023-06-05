@@ -81,7 +81,7 @@ async function addSourceFiles(project: Project) {
   project.addSourceFileAtPath(path.resolve(projRoot, "typing/env.d.ts"));
   const globSourceFile = "**/*.{js?(x),ts?(x),vue}";
   const filePaths = excludeFiles(
-    await glob([globSourceFile, "!sy-vue-ui/**/*", "!components/global.d.ts"], {
+    await glob([globSourceFile, "!sy-vue-ui/**/*"], {
       cwd: pkgRoot, // 根目录(当前工作目录)
       absolute: true, // 返回条目的绝对路径
       onlyFiles: true, // 仅返回文件
