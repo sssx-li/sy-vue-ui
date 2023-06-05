@@ -3,6 +3,7 @@ import { defineConfig } from "vitepress";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Sy Vue UI",
+  base: process.env.NODE_ENV === "production" ? "/sy-vue-ui" : "/",
   description: "一个基于Vue3的组件库",
   themeConfig: {
     nav: [
