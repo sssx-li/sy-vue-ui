@@ -8,6 +8,7 @@
     "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "publish:bundler": "pnpm run -C packages/sy-vue-ui release",
+    "docs": "pnpm run -C site docs:dev",
     "clean": "pnpm run clean:dist && pnpm run clean:bundler && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
     "clean:bundler": "rimraf packages/sy-vue-ui/es packages/sy-vue-ui/lib packages/sy-vue-ui/theme-chalk packages/sy-vue-ui/global.d.ts",
