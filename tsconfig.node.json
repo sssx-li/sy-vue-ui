@@ -13,5 +13,5 @@
     "internal/**/*",
     "internal/**/*.json"
   ],
-  "exclude": ["**/dist"]
+  "exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }

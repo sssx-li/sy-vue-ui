@@ -8,5 +8,5 @@
     "skipLibCheck": true // 忽略所有的声明文件（ *.d.ts）的类型检查
   },
   "include": ["packages", "typing/*.d.ts", "global.d.ts"],
-  "exclude": ["node_modules", "**/dist", "**/gulpfile.ts"]
+  "exclude": ["node_modules", "**/dist", "**/gulpfile.ts", "**/__tests__/**/*"]
 }

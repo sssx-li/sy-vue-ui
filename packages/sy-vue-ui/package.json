@@ -5,6 +5,11 @@
   "main": "lib/components/index.js",
   "module": "es/components/index.mjs",
   "types": "es/components/index.d.ts",
+  "files": [
+    "es",
+    "lib",
+    "theme-chalk"
+  ],
   "exports": {
     ".": {
       "types": "./es/components/index.d.ts",
