@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "@sy-vue-ui/site",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,10 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "1.0.0-beta.1",
-    "vue": "^3.3.4"
+    "vue": "^3.2.47"
   },
   "dependencies": {
-    "sy-vue-ui": "workspace:1.0.16-0"
+    "sy-vue-ui": "workspace:^"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",

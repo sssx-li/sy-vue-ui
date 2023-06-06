@@ -232,13 +232,17 @@ importers:
   play: {}
 
   site:
+    dependencies:
+      sy-vue-ui:
+        specifier: workspace:^
+        version: link:../packages/sy-vue-ui
     devDependencies:
       vitepress:
         specifier: 1.0.0-beta.1
-        version: 1.0.0-beta.1(@algolia/client-search@4.17.1)
+        version: 1.0.0-beta.1(@algolia/client-search@4.17.1)(@types/node@20.2.5)(sass@1.62.1)
       vue:
-        specifier: ^3.3.4
-        version: 3.3.4
+        specifier: ^3.2.47
+        version: 3.2.47
 
 packages:
   /@algolia/autocomplete-core@1.8.2:
@@ -2491,7 +2495,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.9
+      vite: 4.3.9(@types/node@20.2.5)(sass@1.62.1)
       vue: 3.3.4
     dev: true
 
@@ -2808,7 +2812,7 @@ packages:
     dependencies:
       sirv: 2.0.3
       vite: 4.3.9(@types/node@20.2.5)(sass@1.62.1)
-      vue: 3.3.4
+      vue: 3.2.47
     dev: true
 
   /@vue-macros/export-expose@0.0.2(rollup@3.23.0)(vue@3.2.47):
@@ -13598,41 +13602,6 @@ packages:
       - terser
     dev: true
 
-  /vite@4.3.9:
-    resolution:
-      {
-        integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==,
-      }
-    engines: { node: ^14.18.0 || >=16.0.0 }
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.17.19
-      postcss: 8.4.24
-      rollup: 3.23.0
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /vite@4.3.9(@types/node@20.2.5)(sass@1.62.1):
     resolution:
       {
@@ -13670,7 +13639,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-beta.1(@algolia/client-search@4.17.1):
+  /vitepress@1.0.0-beta.1(@algolia/client-search@4.17.1)(@types/node@20.2.5)(sass@1.62.1):
     resolution:
       {
         integrity: sha512-V2yyCwQ+v9fh7rbnGDLp8M7vHa9sLElexXf/JHtBOsOwv7ed9wt1QI4WUagYgKR3TeoJT9v2s6f0UaQSne0EvQ==,
@@ -13688,7 +13657,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.2
-      vite: 4.3.9
+      vite: 4.3.9(@types/node@20.2.5)(sass@1.62.1)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@algolia/client-search'
