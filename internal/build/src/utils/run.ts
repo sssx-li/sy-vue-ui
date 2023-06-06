@@ -11,7 +11,7 @@ export const run = async (command: string, cwd: string = projRoot) =>
     const app = spawn(cmd, args, {
       cwd,
       stdio: 'inherit',
-      shell: process.platform === 'win32'
+      shell: process.platform === 'win32',
     });
 
     const onProcessExit = () => app.kill('SIGHUP');

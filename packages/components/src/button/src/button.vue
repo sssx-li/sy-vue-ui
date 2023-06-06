@@ -6,7 +6,7 @@
 import { useNamespace } from '@sy-vue-ui/hooks';
 import { buttonProps } from './button';
 defineOptions({
-  name: 'SyButton'
+  name: 'SyButton',
 });
 const props = defineProps(buttonProps);
 

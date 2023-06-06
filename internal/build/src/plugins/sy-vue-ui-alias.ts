@@ -13,8 +13,8 @@ export function SyVueUIAlias(): Plugin {
       if (!id.startsWith(sourceThemeChalk)) return;
       return {
         id: id.replaceAll(sourceThemeChalk, bundleThemeChalk),
-        external: 'absolute'
+        external: 'absolute',
       };
-    }
+    },
   };
 }

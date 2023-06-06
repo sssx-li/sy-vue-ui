@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [
     VueMacros({
       plugins: {
-        vue: Vue()
-      }
-    })
-  ]
+        vue: Vue(),
+      },
+    }),
+  ],
 });

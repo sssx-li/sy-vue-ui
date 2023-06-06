@@ -30,11 +30,11 @@ export const buildConfig: Record<Module, BuildInfo> = {
     ext: 'mjs',
     output: {
       name: 'es',
-      path: path.resolve(syOutput, 'es')
+      path: path.resolve(syOutput, 'es'),
     },
     bundle: {
-      path: `${PKG_NAME}/es`
-    }
+      path: `${PKG_NAME}/es`,
+    },
   },
   cjs: {
     module: 'CommonJS',
@@ -42,12 +42,12 @@ export const buildConfig: Record<Module, BuildInfo> = {
     ext: 'js',
     output: {
       name: 'lib',
-      path: path.resolve(syOutput, 'lib')
+      path: path.resolve(syOutput, 'lib'),
     },
     bundle: {
-      path: `${PKG_NAME}/lib`
-    }
-  }
+      path: `${PKG_NAME}/lib`,
+    },
+  },
 };
 export const buildConfigEntries = Object.entries(
   buildConfig

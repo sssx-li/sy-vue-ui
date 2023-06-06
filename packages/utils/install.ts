@@ -20,6 +20,6 @@ export const makeInstaller = (components: Plugin[] = []) => {
       components.forEach((c) => {
         return app.use(c);
       });
-    }
+    },
   };
 };

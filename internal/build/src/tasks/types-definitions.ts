@@ -12,7 +12,7 @@ import {
   excludeFiles,
   pkgRoot,
   projRoot,
-  syRoot
+  syRoot,
 } from '@sy-vue-ui/build-utils';
 import { pathRewriter } from '../utils';
 
@@ -28,12 +28,12 @@ export const generateTypesDefinitions = async () => {
     baseUrl: projRoot,
     preserveSymlinks: true, //保留符号链接(不把符号链接解析为其真实路径;将符号链接文件视为真正的文件)
     skipLibCheck: true, // 忽略lib库类型检查
-    noImplicitAny: false // 不包含隐式any
+    noImplicitAny: false, // 不包含隐式any
   };
   const project = new Project({
     compilerOptions,
     tsConfigFilePath: TSCONFIG_PATH,
-    skipAddingFilesFromTsConfig: true // 补充tsconfig中解析文件
+    skipAddingFilesFromTsConfig: true, // 补充tsconfig中解析文件
   });
   const sourceFiles = await addSourceFiles(project);
   consola.success('添加资源文件成功~');
@@ -41,7 +41,7 @@ export const generateTypesDefinitions = async () => {
   consola.success('类型检查通过~');
 
   await project.emit({
-    emitOnlyDtsFiles: true //  仅输出声明文件
+    emitOnlyDtsFiles: true, //  仅输出声明文件
   });
   const tasks = sourceFiles.map(async (sourceFile) => {
     const relativePath = path.relative(pkgRoot, sourceFile.getFilePath());
@@ -58,7 +58,7 @@ export const generateTypesDefinitions = async () => {
     const subTasks = emitFiles.map(async (outputFile) => {
       const filepath = outputFile.getFilePath();
       await mkdir(path.dirname(filepath), {
-        recursive: true // 创建父级目录
+        recursive: true, // 创建父级目录
       });
 
       await writeFile(
@@ -84,13 +84,13 @@ async function addSourceFiles(project: Project) {
     await glob([globSourceFile, '!sy-vue-ui/**/*'], {
       cwd: pkgRoot, // 根目录(当前工作目录)
       absolute: true, // 返回条目的绝对路径
-      onlyFiles: true // 仅返回文件
+      onlyFiles: true, // 仅返回文件
     })
   );
   const syPaths = excludeFiles(
     await glob(globSourceFile, {
       cwd: syRoot,
-      onlyFiles: true
+      onlyFiles: true,
     })
   );
 
@@ -109,7 +109,7 @@ async function addSourceFiles(project: Project) {
 
           if (scriptSetup) {
             const compiled = vueCompiler.compileScript(sfc.descriptor, {
-              id: 'xxx'
+              id: 'xxx',
             });
             content += compiled.content;
           }
@@ -131,7 +131,7 @@ async function addSourceFiles(project: Project) {
       sourceFiles.push(
         project.createSourceFile(path.resolve(pkgRoot, file), content)
       );
-    })
+    }),
   ]);
 
   return sourceFiles;

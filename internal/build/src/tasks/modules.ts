@@ -19,7 +19,7 @@ export const buildModules = async () => {
     await glob('**/*.{js,ts,vue}', {
       cwd: pkgRoot,
       absolute: true,
-      onlyFiles: true
+      onlyFiles: true,
     })
   );
   const bundle = await rollup({
@@ -31,25 +31,25 @@ export const buildModules = async () => {
         setupSFC: false,
         plugins: {
           vue: vue({
-            isProduction: false
+            isProduction: false,
           }),
-          vueJsx: vueJsx()
-        }
+          vueJsx: vueJsx(),
+        },
       }),
       nodeResolve({
-        extensions: ['.mjs', '.js', '.json', '.ts']
+        extensions: ['.mjs', '.js', '.json', '.ts'],
       }),
       commonjs(),
       esbuild({
         sourceMap: true,
         target,
         loaders: {
-          '.vue': 'ts'
-        }
-      })
+          '.vue': 'ts',
+        },
+      }),
     ],
     external: await generateExternal({ full: false }),
-    treeshake: false
+    treeshake: false,
   });
   await writeBundles(
     bundle,
@@ -61,7 +61,7 @@ export const buildModules = async () => {
         preserveModules: true,
         preserveModulesRoot: syRoot,
         sourcemap: true,
-        entryFileNames: `[name].${config.ext}`
+        entryFileNames: `[name].${config.ext}`,
       };
     })
   );

@@ -20,6 +20,6 @@ export const getPackageDependencies = (
 
   return {
     dependencies: Object.keys(dependencies),
-    peerDependencies: Object.keys(peerDependencies)
+    peerDependencies: Object.keys(peerDependencies),
   };
 };

@@ -9,7 +9,7 @@ import {
   projRoot,
   syOutput,
   syPackage,
-  syRoot
+  syRoot,
 } from '@sy-vue-ui/build-utils';
 
 import { buildConfig, run, runTask, withTaskName } from './src';
@@ -21,7 +21,7 @@ export const copyFiles = () =>
     copyFile(
       path.resolve(projRoot, 'global.d.ts'),
       path.resolve(syOutput, 'global.d.ts')
-    )
+    ),
   ]);
 
 export const copyTypesDefinitions: TaskFunction = (done) => {
