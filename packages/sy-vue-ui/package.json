@@ -2,9 +2,9 @@
   "name": "sy-vue-ui",
   "version": "1.0.20",
   "description": "A Component Library for Vue 3",
-  "main": "lib/components/index.js",
-  "module": "es/components/index.mjs",
-  "types": "es/components/index.d.ts",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
   "files": [
     "es",
     "lib",
@@ -13,16 +13,16 @@
   ],
   "exports": {
     ".": {
-      "types": "./es/components/index.d.ts",
-      "import": "./es/components/index.mjs",
-      "require": "./lib/components/index.js"
+      "types": "./es/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
     },
-    "./es": "./es/components/index.mjs",
-    "./lib": "./lib/components/index.js",
-    "./es/*.mjs": "./es/components/*.mjs",
-    "./es/*": "./es/components/*.mjs",
-    "./lib/*.js": "./lib/components/*.js",
-    "./lib/*": "./lib/components/*.js",
+    "./es": "./es/index.mjs",
+    "./lib": "./lib/index.js",
+    "./es/*.mjs": "./es/*.mjs",
+    "./es/*": "./es/*.mjs",
+    "./lib/*.js": "./lib/*.js",
+    "./lib/*": "./lib/*.js",
     "./*": "./*"
   },
   "publishConfig": {
