@@ -1,6 +1,6 @@
 {
   "name": "sy-vue-ui",
-  "version": "1.0.16-1",
+  "version": "1.0.19",
   "description": "A Component Library for Vue 3",
   "main": "lib/components/index.js",
   "module": "es/components/index.mjs",
@@ -8,7 +8,8 @@
   "files": [
     "es",
     "lib",
-    "theme-chalk"
+    "theme-chalk",
+    "global.d.ts"
   ],
   "exports": {
     ".": {
