@@ -19,6 +19,10 @@ export const copyFiles = () =>
   Promise.all([
     copyFile(syPackage, path.join(syOutput, 'package.json')),
     copyFile(
+      path.resolve(projRoot, 'README.md'),
+      path.resolve(syOutput, 'README.md')
+    ),
+    copyFile(
       path.resolve(projRoot, 'global.d.ts'),
       path.resolve(syOutput, 'global.d.ts')
     ),

@@ -3,4 +3,5 @@ dist
 es
 lib
 **/sy-vue-ui/theme-chalk
+**/sy-vue-ui/README.md
 coverage
