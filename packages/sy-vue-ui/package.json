@@ -1,6 +1,6 @@
 {
   "name": "sy-vue-ui",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "A Component Library for Vue 3",
   "main": "lib/components/index.js",
   "module": "es/components/index.mjs",
