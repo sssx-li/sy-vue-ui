@@ -7,7 +7,7 @@
 ```
 npm i sy-element-ui
 或
-pnpm add sy-element (推荐)
+pnpm add sy-element-ui (推荐)
 ```
 
 ### 用法

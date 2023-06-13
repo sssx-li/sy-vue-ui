@@ -1,5 +1,5 @@
 <template>
-  <SyButton>按钮1</SyButton>
+  <sy-button type="primary">按钮1</sy-button>
 </template>
 
 <script setup lang="ts"></script>
